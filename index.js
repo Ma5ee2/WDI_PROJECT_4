@@ -9,6 +9,7 @@ mongoose.plugin(require('mongoose-unique-validator'));
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const { port, dbURI, env } = require('./config/environment');
+const routes = require('./config/routes');
 const customResponses = require('./lib/customResponses');
 const errorHandler = require('./lib/errorHandler');
 
