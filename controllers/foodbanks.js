@@ -50,7 +50,7 @@ function foodbanksDelete(req, res, next) {
     .exec()
     .then((foodbank) => {
       if(!foodbank) return res.notFound();
-      return food.remove();
+      return foodbank.remove();
     })
     .then(() => res.status(204).end())
     .catch(next);

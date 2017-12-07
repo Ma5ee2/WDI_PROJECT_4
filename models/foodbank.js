@@ -14,4 +14,5 @@ const foodbankSchema = mongoose.Schema({
   email: { type: String }
 });
 
+
 module.exports = mongoose.model('Foodbank', foodbankSchema);
