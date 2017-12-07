@@ -24,17 +24,20 @@ class FoodbanksIndex extends React.Component {
                 return (
                   <div key={foodbank.id} className="image-tile col-md-4 col-sm-6 col-xs-12">
                     <Link to={`/foodbanks/${foodbank.id}`}>
-                    <img src={foodbank.image} className="img-responsive" />
-                  </Link>
-                </div>
-              );
-            })}
+                      <img src={foodbank.image} className="img-responsive" />
+                    </Link>
+                    <h2>{foodbank.name}</h2>
+                    <h3>{foodbank.location.address}</h3>
+                    <h4>{foodbank.telephone_number}</h4>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 }
 
 export default FoodbanksIndex;
