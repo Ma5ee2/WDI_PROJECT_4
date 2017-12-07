@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
 import FoodbanksIndex from './components/foodbanks/FoodbanksIndex';
 import FoodbanksShow from './components/foodbanks/FoodbanksShow';
+import FoodbanksNew from './components/foodbanks/FoodbanksNew';
 
 import 'bootstrap-css-only';
 import './scss/style.scss';
@@ -20,8 +21,11 @@ class App extends React.Component {
             <hr/>
           </header>
           <main>
-            <Route exact path="/" component={FoodbanksIndex} />
-            <Route exact path="/foodbanks/:id" component={FoodbanksShow} />
+            <Switch>
+              <Route path="/foodbanks/new" component={FoodbanksNew} />
+              <Route path="/foodbanks/:id" component={FoodbanksShow} />
+              <Route path="/" component={FoodbanksIndex} />
+            </Switch>
           </main>
         </div>
       </Router>

@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const foodbankSchema = mongoose.Schema({
   image: { type: String },
   name: { type: String },
+  address: { type: String },
   location: {
-    address: { type: String },
     lat: Number,
     lng: Number
   },

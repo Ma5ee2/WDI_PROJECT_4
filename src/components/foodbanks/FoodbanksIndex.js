@@ -19,6 +19,9 @@ class FoodbanksIndex extends React.Component {
       <div>
         <div className="row">
           <div className="page-banner col-md-12">
+            <Link to="/foodbanks/new" className="main-button">
+              <i className="fa fa-plus" aria-hidden="true"></i>Add a foodbank
+            </Link>
             <div>
               {this.state.foodbanks.map(foodbank => {
                 return (
@@ -27,7 +30,7 @@ class FoodbanksIndex extends React.Component {
                       <img src={foodbank.image} className="img-responsive" />
                     </Link>
                     <h2>{foodbank.name}</h2>
-                    <h3>{foodbank.location.address}</h3>
+                    <h3>{foodbank.address}</h3>
                     <h4>{foodbank.telephone_number}</h4>
                   </div>
                 );
