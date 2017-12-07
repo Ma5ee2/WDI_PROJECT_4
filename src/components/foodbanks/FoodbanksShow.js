@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
+import Auth from '../../lib/Auth';
 import BackButton from '../utility/BackButton';
 
 class FoodbanksShow extends React.Component {
@@ -18,9 +19,11 @@ class FoodbanksShow extends React.Component {
       .catch(err => console.log(err));
   }
 
-  deleteAlbum = () => {
+  deleteFoodbank = () => {
     Axios
-      .delete(`/api/foodbanks/${this.props.match.params.id}`)
+      .delete(`/api/foodbanks/${this.props.match.params.id}`, {
+        headers: { 'Authorization': `Bearer ${Auth.getToken()}` }
+      })
       .then(() => this.props.history.push('/'))
       .then(err => console.log(err));
   }
@@ -37,12 +40,13 @@ class FoodbanksShow extends React.Component {
           <Link to=""><h4>{this.state.foodbank.website}</h4></Link>
           <Link to=""><h4>{this.state.foodbank.email}</h4></Link>
           <hr/>
-          <Link to={`/foodbanks/${this.state.foodbank.id}/edit`} className="standard-button">
+          {Auth.isAuthenticated() && <Link to={`/foodbanks/${this.state.foodbank.id}/edit`} className="standard-button">
           <i className="fa fa-pencil" aria-hidden="true"></i>Edit
-        </Link>
-        <button className="main-button" onClick={this.deleteAlbum}>
+          </Link>}
+          {' '}
+          {Auth.isAuthenticated() && <button className="main-button" onClick={this.deleteFoodbank}>
           <i className="fa fa-trash" aria-hidden="true"></i>Delete
-        </button>
+        </button>}
       </div>
     </div>
   );

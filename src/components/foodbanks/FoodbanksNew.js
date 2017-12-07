@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 
+import Auth from '../../lib/Auth';
 import FoodbanksForm from './FoodbanksForm';
 
 class FoodbanksNew extends React.Component {
@@ -24,7 +25,9 @@ class FoodbanksNew extends React.Component {
     e.preventDefault();
 
     Axios
-      .post('/api/foodbanks', this.state.foodbank)
+      .post('/api/foodbanks', this.state.foodbank, {
+        headers: { 'Authorization': `Bearer ${Auth.getToken()}` }
+      })
       .then(() => this.props.history.push('/'))
       .catch(err => console.log(err));
   }
