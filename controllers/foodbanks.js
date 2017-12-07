@@ -23,7 +23,7 @@ function foodbanksShow(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then((foodbank) => {
-      res.json(foddbank);
+      res.json(foodbank);
     })
     .catch(next);
 }
