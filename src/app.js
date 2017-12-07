@@ -3,14 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/utility/Navbar';
-
-import FoodbanksIndex from './components/foodbanks/FoodbanksIndex';
-import FoodbanksShow from './components/foodbanks/FoodbanksShow';
-import FoodbanksNew from './components/foodbanks/FoodbanksNew';
-import FoodbanksEdit from './components/foodbanks/FoodbanksEdit';
-
-import Register from './components/auth/Register';
-import Login from './components/auth/Login';
+import Routes from './components/utility/Routes';
 
 import 'bootstrap-css-only';
 import './scss/style.scss';
@@ -28,14 +21,7 @@ class App extends React.Component {
             <hr/>
           </header>
           <main>
-            <Switch>
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
-              <Route exact path="/" component={FoodbanksIndex} />
-              <Route path="/foodbanks/new" component={FoodbanksNew} />
-              <Route path="/foodbanks/:id/edit" component={FoodbanksEdit} />
-              <Route path="/foodbanks/:id" component={FoodbanksShow} />
-            </Switch>
+            <Routes />
           </main>
         </div>
       </Router>
