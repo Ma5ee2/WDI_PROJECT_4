@@ -4,12 +4,11 @@ import Axios from 'axios';
 
 import Auth from '../../lib/Auth';
 import BackButton from '../utility/BackButton';
+import GoogleMap from '../api/GoogleMap';
 
 class FoodbanksShow extends React.Component {
   state = {
-    foodbank: {
-
-    }
+    foodbank: {}
   }
 
   componentWillMount() {
@@ -34,7 +33,8 @@ class FoodbanksShow extends React.Component {
         <div className="image-tile col-md-6">
           <BackButton />
           <h1>{this.state.foodbank.name}</h1>
-          <img src={this.state.foodbank.image} className="img-responsive" />
+          <img src={this.state.foodbank.image} className="img-responsive"/>
+          <GoogleMap key={this.state.foodbank.id} center={this.state.foodbank.location}/>
           <h2>{this.state.foodbank.address}</h2>
           <h3>{this.state.foodbank.telephone_number}</h3>
           <Link to=""><h4>{this.state.foodbank.website}</h4></Link>
