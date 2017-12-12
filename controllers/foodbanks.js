@@ -21,6 +21,7 @@ function foodbanksCreate(req, res, next) {
 function foodbanksShow(req, res, next) {
   Foodbank
     .findById(req.params.id)
+    .populate('admin')
     .exec()
     .then((foodbank) => {
       res.json(foodbank);

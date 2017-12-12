@@ -11,6 +11,9 @@ import FoodbanksShow from '../foodbanks/FoodbanksShow';
 import FoodbanksNew from '../foodbanks/FoodbanksNew';
 import FoodbanksEdit from '../foodbanks/FoodbanksEdit';
 
+import ChatsIndex from '../chats/ChatsIndex';
+// import ChatsIndex from '../chats/ChatsIndex';
+
 const Routes = () => {
   return (
     <Switch>
