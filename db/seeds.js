@@ -8,21 +8,21 @@ const User      = require('../models/user');
 const userData = [
   {
     avatar: 'http://www.fillmurray.com/300/300',
-    username: 'fill',
+    username: 'Fill',
     email: 'fill@murray.com',
     password: 'password',
     passwordConfirmation: 'password'
   },
   {
     avatar: 'http://www.fillmurray.com/300/300',
-    username: 'rane',
+    username: 'Rane',
     email: 'rane@ga.com',
     password: 'password',
     passwordConfirmation: 'password'
   },
   {
     avatar: 'http://www.fillmurray.com/300/300',
-    username: 'masee',
+    username: 'Masee',
     email: 'masee@drunk.com',
     password: 'password',
     passwordConfirmation: 'password'

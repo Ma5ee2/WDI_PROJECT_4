@@ -57,8 +57,6 @@ class FoodbanksShow extends React.Component {
         //
         const message = Object.assign({}, this.state.message, { content: '' });
         this.setState({ chat: res.data, message });
-
-
       })
   }
 
@@ -68,29 +66,33 @@ class FoodbanksShow extends React.Component {
         <div className="image-tile col-md-6">
           <BackButton />
           <h1>{this.state.foodbank.name}</h1>
-          <img src={this.state.foodbank.image} className="img-responsive"/>
-          <hr/>
+          <div>
+            <img src={this.state.foodbank.image} className="img-responsive"/>
+            <h2>{this.state.foodbank.address}</h2>
+            <h3>{this.state.foodbank.telephone_number}</h3>
+            <Link to=""><h4>{this.state.foodbank.website}</h4></Link>
+            <Link to=""><h4>{this.state.foodbank.email}</h4></Link>
+            {Auth.isAuthenticated() && <Link to={`/foodbanks/${this.state.foodbank.id}/edit`} className="standard-button">
+            <i className="fa fa-pencil" aria-hidden="true"></i>Edit</Link>}
+            {' '}
+            {Auth.isAuthenticated() && <button className="main-button" onClick={this.deleteFoodbank}>
+              <i className="fa fa-trash" aria-hidden="true"></i>Delete
+            </button>}
+          </div>
+        </div>
+        <div className="icon">
           { this.state.foodbank.location && <GoogleMap {...this.state} />}
-          <h2>{this.state.foodbank.address}</h2>
-          <h3>{this.state.foodbank.telephone_number}</h3>
-          { this.state.foodbank.admin && <h3>{this.state.foodbank.admin.username}</h3> }
-          <Link to=""><h4>{this.state.foodbank.website}</h4></Link>
-          <Link to=""><h4>{this.state.foodbank.email}</h4></Link>
+        </div>
+        <div>
+          { this.state.foodbank.admin && <h3>Added by: {this.state.foodbank.admin.username}</h3> }
+          <hr/>
           <Chat
             chat={this.state.chat}
             handleMessageChange={this.handleMessageChange}
             handleMessageSubmit={this.handleMessageSubmit}
             message={this.state.message}
           />
-          <hr/>
-          {Auth.isAuthenticated() && <Link to={`/foodbanks/${this.state.foodbank.id}/edit`} className="standard-button">
-          <i className="fa fa-pencil" aria-hidden="true"></i>Edit
-        </Link>}
-        {' '}
-        {Auth.isAuthenticated() && <button className="main-button" onClick={this.deleteFoodbank}>
-          <i className="fa fa-trash" aria-hidden="true"></i>Delete
-        </button>}
-      </div>
+        </div>
     </div>
   );
 }

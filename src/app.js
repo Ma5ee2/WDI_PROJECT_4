@@ -15,8 +15,6 @@ class App extends React.Component {
       <Router>
         <div className="container">
           <header>
-            <Link to="/"><h1>FoodBank Donator</h1></Link>
-            <h2>Help a foodbank near you.</h2>
             <Navbar />
             <hr/>
           </header>

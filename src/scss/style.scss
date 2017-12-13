@@ -1,4 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch|Homemade+Apple');
+
 .google-map {
   height: 70vh;
+}
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.website-name {
+  font-size: 4em;
+  font-family: 'Cabin Sketch', cursive;
+  color: #27AE5F;
+  margin: 2px auto;
+}
+
+.tagline {
+  font-family: 'Homemade Apple', cursive;
+  font-size: 20px;
+  margin: 0px 5px;
+}
+
+.login-register {
+  float: right;
+}
+
+.gm-style {
+  font-size: 20px;
+}
+
+.chat-div {
+  max-width: 500px;
+  margin: auto;
+  div {
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    p {
+      margin: 0;
+      span {
+        background: lighten(black, 90%);
+        padding: 10px;
+        border-radius: 4px;
+      }
+    }
+    &:nth-child(odd) {
+      p {
+        text-align: left;
+      }
+    }
+    &:nth-child(even) {
+      p {
+        text-align: right;
+      }
+    }
+  }
 }

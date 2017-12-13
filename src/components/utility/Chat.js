@@ -8,18 +8,18 @@ const Chat = ({chat, message, handleMessageChange, handleMessageSubmit}) =>  {
     <div>
       <h1>Chat</h1>
       { chat.admin && <h3>Admin: <strong>{chat.admin.username}</strong></h3>}
-      <div>
+      <div className="chat-div">
         { chat.messages && chat.messages.map((message, i) =>
           <div key={i}>
-            <p><strong>{ message.user.username }</strong> { message.content }</p>
+            <p><span><strong>{ message.user.username }</strong> { message.content }</span></p>
           </div>
         )}
       </div>
       <hr />
-      <form onSubmit={handleMessageSubmit}>
+      {Auth.isAuthenticated() && <form onSubmit={handleMessageSubmit}>
         <input onChange={handleMessageChange} type="text" name="content" value={message.content} />
         <input type="submit" value="Send" />
-      </form>
+      </form>}
     </div>
   )
 }

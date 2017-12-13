@@ -14,7 +14,6 @@ router.route('/foodbanks/:id')
   .put(foodbanks.update)
   .delete(foodbanks.delete);
 
-
 router.route('/chats')
   .get(chats.index);
 

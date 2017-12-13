@@ -15,11 +15,15 @@ const Navbar = ({history}) => {
 
   return(
     <nav>
-      {!Auth.isAuthenticated() && <Link to="/login" className="standard-button">Login</Link>}
-      {' '}
-      {!Auth.isAuthenticated() && <Link to="/register" className="standard-button">Register</Link>}
-      {' '}
-      {Auth.isAuthenticated() && <a href="#" className="standard-button" onClick={logout}>Logout</a>}
+      <Link to="/"><h1 className="website-name">FoodBank Donator</h1></Link>
+      <h2 className="tagline">Help a foodbank near you.</h2>
+      <div className="login-register">
+        {!Auth.isAuthenticated() && <Link to="/login" className="standard-button">Login</Link>}
+        {' '}
+        {!Auth.isAuthenticated() && <Link to="/register" className="standard-button">Register</Link>}
+        {' '}
+        {Auth.isAuthenticated() && <a href="#" className="standard-button" onClick={logout}>Logout</a>}
+      </div>
     </nav>
   );
 };

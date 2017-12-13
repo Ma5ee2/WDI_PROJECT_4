@@ -2,6 +2,8 @@ import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import Auth from '../../lib/Auth';
+
 class FoodbanksIndex extends React.Component {
   state = {
     foodbanks: []
@@ -19,9 +21,9 @@ class FoodbanksIndex extends React.Component {
       <div>
         <div className="row">
           <div className="page-banner col-md-12">
-            <Link to="/foodbanks/new" className="main-button">
+            {Auth.isAuthenticated() && <Link to="/foodbanks/new" className="main-button">
               <i className="fa fa-plus" aria-hidden="true"></i>Add a foodbank
-            </Link>
+            </Link>}
             <div>
               {this.state.foodbanks.map(foodbank => {
                 return (
