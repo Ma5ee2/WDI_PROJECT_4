@@ -1,9 +1,9 @@
-const mongoose   = require('mongoose');
+const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 const { dbURI } = require('../config/environment');
-const Foodbank  = require('../models/foodbank');
-const User      = require('../models/user');
+const Foodbank = require('../models/foodbank');
+const User = require('../models/user');
 
 const userData = [
   {
@@ -62,7 +62,7 @@ mongoose
         admin: users[2]
       },
       {
-        image: 'http://www.london-se1.co.uk/news/imageuploads/1296918008_80.177.117.97.jpg',
+        image: 'http://www.london-se1.co.uk/whatson/imageuploads/1506608294_46.208.31.3.jpg',
         name: 'St John\'s Waterloo',
         location: {
           lat: 51.50423821100552,

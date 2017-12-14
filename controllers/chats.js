@@ -1,5 +1,8 @@
 const Chat = require('../models/chat');
 
+const sockets = require('../lib/sockets');
+const io = sockets.getConnection();
+
 function chatsIndex(req, res, next) {
   Chat
     .find()
@@ -52,7 +55,11 @@ function createMessage(req, res, next) {
       return chat.save();
     })
     .then(chat => Chat.populate(chat, { path: 'admin messages.user' }))
-    .then(chat => res.status(201).json(chat))
+    .then(chat => {
+      const message = chat.messages[chat.messages.length -1];
+
+      io.emit('MESSAGE', message);
+    })
     .catch(next);
 }
 

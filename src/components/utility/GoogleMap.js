@@ -14,7 +14,7 @@ class GoogleMap extends React.Component {
 
     const foodbankImage = {
       url: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Google-location-icon-color_icons_green_home.png',
-      scaledSize: new google.maps.Size(40, 60)
+      scaledSize: new google.maps.Size(32, 63)
     };
 
     this.foodbankMarker = new google.maps.Marker({
@@ -25,8 +25,8 @@ class GoogleMap extends React.Component {
     });
 
     const image = {
-      url: 'https://cdn3.iconfinder.com/data/icons/internet-and-web-4/78/internt_web_technology-08-128.png',
-      scaledSize: new google.maps.Size(40, 60)
+      url: 'https://image.flaticon.com/icons/png/128/34/34343.png',
+      scaledSize: new google.maps.Size(50, 50)
     };
 
     navigator.geolocation.getCurrentPosition(position => {

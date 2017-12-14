@@ -1,8 +1,19 @@
 const router = require('express').Router();
+const users = require('../controllers/users');
 const foodbanks = require('../controllers/foodbanks');
 const chats = require('../controllers/chats');
 const Auth = require('../controllers/auth');
 const secureRoute = require('../lib/secureRoute');
+
+// router.route('/users')
+//   .get(users.index)
+//   .post(users.create);
+//
+router.route('/users/:id')
+//   .all(secureRoute)
+  .get(users.show);
+//   .put(users.update)
+//   .delete(users.delete);
 
 router.route('/foodbanks')
   .get(foodbanks.index)

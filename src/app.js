@@ -9,6 +9,7 @@ import 'bootstrap-css-only';
 import './scss/style.scss';
 
 class App extends React.Component {
+  
 
   render() {
     return (
@@ -16,7 +17,6 @@ class App extends React.Component {
         <div className="container">
           <header>
             <Navbar />
-            <hr/>
           </header>
           <main>
             <Routes />

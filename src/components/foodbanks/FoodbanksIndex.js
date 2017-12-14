@@ -19,21 +19,19 @@ class FoodbanksIndex extends React.Component {
   render() {
     return (
       <div>
+        <hr/>
         <div className="row">
           <div className="page-banner col-md-12">
-            {Auth.isAuthenticated() && <Link to="/foodbanks/new" className="main-button">
-              <i className="fa fa-plus" aria-hidden="true"></i>Add a foodbank
-            </Link>}
-            <div>
+            <div className="index">
               {this.state.foodbanks.map(foodbank => {
                 return (
                   <div key={foodbank.id} className="image-tile col-md-4 col-sm-6 col-xs-12">
                     <Link to={`/foodbanks/${foodbank.id}`}>
-                      <img src={foodbank.image} className="img-responsive" />
+                      <img src={foodbank.image} className="img-index img-thumbnail img-responsive" />
                     </Link>
-                    <h2>{foodbank.name}</h2>
-                    <h3>{foodbank.address}</h3>
-                    <h4>{foodbank.telephone_number}</h4>
+                    <h2 className="foodbank-name">{foodbank.name}</h2>
+                    <h3 className="foodbank-address">{foodbank.address}</h3>
+                    <h4 className="foodbank-telephone">{foodbank.telephone_number}</h4>
                   </div>
                 );
               })}
