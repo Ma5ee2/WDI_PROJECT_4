@@ -1,6 +1,10 @@
 //show page image
 .img-show {
-  min-height: 300px;
+  min-height: 400px;
+  padding: 10px;
+  box-shadow: 5px 10px 18px #888888;
+  outline: none;
+  margin-bottom: 15px;
 }
 
 .foodbank-name-show {
@@ -21,4 +25,18 @@
 
 .foodbank-email-show {
   font-size: 15px;
+}
+
+.google {
+  margin-top: 45px;
+}
+
+.google-map {
+    border: 1px solid #27AE5F;
+    border-radius: 3px;
+}
+
+.administrator {
+  font-size: 15px;
+  margin-left: 15px;
 }

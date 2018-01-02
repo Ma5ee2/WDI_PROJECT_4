@@ -46,15 +46,16 @@ class FoodbanksShow extends React.Component {
             <Link to=""><h4 className="foodbank-email-show">{this.state.foodbank.email}</h4></Link>
             {' '}
             {Auth.getPayload() && this.state.foodbank.admin && Auth.getPayload().userId === this.state.foodbank.admin.id && <button className="main-button" onClick={this.deleteFoodbank}>
-              <i className="fa fa-trash" aria-hidden="true"></i>Delete Foodbank
+              <i className="main-button fa fa-trash" aria-hidden="true"></i>Delete Foodbank
             </button>}
           </div>
         </div>
         <div className="google">
+          <h1 className="foodbank-name-show">Map</h1>
           { this.state.foodbank.location && <GoogleMap {...this.state} />}
         </div>
         <div>
-          { this.state.foodbank.admin && <h3>Added by: {this.state.foodbank.admin.username}</h3> }
+          { this.state.foodbank.admin && <h3 className="administrator">Added by: {this.state.foodbank.admin.username}</h3> }
           <hr/>
           <Chat foodBankId={this.props.match.params.id} />
         </div>

@@ -73,7 +73,7 @@ mongoose
         website: 'http://waterloo.foodbank.org.uk',
         email: 'foodbank@oasiswaterloo.org',
         admin: users[1]
-      }
+      },
     ])
   })
   .then(foodbanks => console.log(`${foodbanks.length} foodbanks created!`))

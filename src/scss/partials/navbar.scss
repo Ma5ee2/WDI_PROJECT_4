@@ -2,8 +2,30 @@
 .website-name {
   font-size: 4em;
   font-family: 'Cabin Sketch', cursive;
-  color: #27AE5F;
   margin: 4px auto;
+  text-decoration: none;
+  a {
+    color: #27AE5F;
+    text-decoration: none;
+    &:hover {
+      color: #2b2929;
+    }
+  }
+}
+
+.standard-button {
+  a {
+    color: #2b2929;
+    font-size: 20px;
+  }
+  &:hover {
+    color: #27AE5F;
+    text-decoration: none;
+  }
+}
+
+.back-button {
+  padding: 20px 0 0 0;
 }
 
 //navbar
@@ -16,6 +38,7 @@
 //navbar
 .login-register {
   float: right;
+  margin-top: -51px;
 }
 
 .gm-style {
@@ -33,4 +56,6 @@
   border-radius: 50%;
   display: block;
   margin: auto;
+  border: 1px solid #27AE5F;
+
 }

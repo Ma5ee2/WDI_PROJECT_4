@@ -14,7 +14,7 @@ class GoogleMap extends React.Component {
 
     const foodbankImage = {
       url: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Google-location-icon-color_icons_green_home.png',
-      scaledSize: new google.maps.Size(32, 63)
+      scaledSize: new google.maps.Size(35, 65)
     };
 
     this.foodbankMarker = new google.maps.Marker({

@@ -12,6 +12,9 @@ class Chat extends React.Component {
 
     message: {
       content: ''
+    },
+    user: {
+      avatar: ''
     }
   }
 
@@ -52,7 +55,7 @@ class Chat extends React.Component {
         <div className="chat-div">
           { this.state.chat.messages && this.state.chat.messages.map((message, i) =>
             <div key={i}>
-              <p><span><strong>{ message.user.username }</strong> { message.content }</span></p>
+              <p><span><strong>{ message.user.username }:</strong> { message.content }</span></p>
             </div>
           )}
         </div>
@@ -60,11 +63,11 @@ class Chat extends React.Component {
         <div className="chat-container">
           {Auth.isAuthenticated() && <form onSubmit={this.handleMessageSubmit}>
             <input className="chat-input" onChange={this.handleMessageChange} type="text" name="content" value={this.state.message.content} />
-            <input type="submit" value="Send" />
+            <input className="main-button" type="submit" value="Send" />
           </form>}
         </div>
       </div>
-    )
+    );
   }
 }
 

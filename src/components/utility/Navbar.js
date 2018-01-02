@@ -24,7 +24,7 @@ class Navbar extends React.Component {
     return(
       <nav className="navbar navbar-light bg-light justify-content-between">
         <form className="form-inline">
-          <Link to="/"><h1 className="website-name">FoodBank Donator</h1></Link>
+          <h1 className="website-name"><Link to="/">FoodBank Donator</Link></h1>
           <h2 className="tagline">Help a foodbank near you.</h2>
           <div className="adding">
             {Auth.isAuthenticated() && <Link to="/foodbanks/new" className="standard-button">
