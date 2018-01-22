@@ -4,6 +4,9 @@
   "description": "A React and Webpack setup for WDI",
   "main": "server.js",
   "license": "MIT",
+  "engines": {
+    "node": "8.x.x"
+  },
   "scripts": {
     "start": "yarn build && node index",
     "start:client": "webpack-dev-server",
