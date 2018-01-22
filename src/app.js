@@ -9,8 +9,6 @@ import 'bootstrap-css-only';
 import './scss/style.scss';
 
 class App extends React.Component {
-  
-
   render() {
     return (
       <Router>
